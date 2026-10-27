@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theodore — IT Officer & Web Developer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- INTRO / LOADING & WELCOME SCREEN -->
+    <div id="intro-screen" class="intro-screen" aria-label="Welcome Screen">
+        <!-- Stage 1: Loading Initialization -->
+        <div id="loading-stage" class="intro-stage active">
+            <div class="intro-badge">
+                <span class="pulse-dot"></span> SYSTEM BOOT
+            </div>
+            <h2 class="loading-title">Initializing Theodore's Portfolio...</h2>
+            <div class="loading-bar-container">
+                <div class="loading-progress-bar" id="progress-bar"></div>
+            </div>
+            <p class="loading-sub">Preparing the experience</p>
+            <button id="skip-loading-btn" class="btn btn-text mt-4">Skip Intro ↗</button>
+        </div>
+
+        <!-- Stage 2: Welcome Card -->
+        <div id="welcome-stage" class="intro-stage">
+            <div class="intro-content">
+                <div class="intro-badge">
+                    <span class="pulse-dot"></span> EST. PORTFOLIO
+                </div>
+                <h1 class="intro-title">Hello, my name is Theodore.</h1>
+                <p class="intro-subtitle">This is my portfolio website. I’m an IT Officer and Web Developer who enjoys building useful things and solving real problems.</p>
+                <p class="intro-quote">“Be strong enough to be gentle.”</p>
+                
+                <div class="intro-actions">
+                    <button id="enter-btn" class="btn btn-primary">
+                        ENTER PORTFOLIO <i class="fa-solid fa-arrow-up-right"></i>
+                    </button>
+                    <button id="skip-welcome-btn" class="btn btn-text">Skip Intro</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="intro-footer-note">
+            <span>[ SYSTEM READY // THEODORE.DEV ]</span>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <header class="site-header" id="masthead">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <span class="logo-mark">T</span>
+                <span class="logo-text">Theodore</span>
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#about">About</a>
+                <a href="#paths">Paths</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact" class="nav-highlight">Let's Talk</a>
+            </nav>
+
+            <div class="nav-controls">
+                <!-- Music Player Widget -->
+                <div class="music-widget" id="music-widget" title="Toggle Background Audio">
+                    <button id="music-toggle-btn" aria-label="Toggle Audio">
+                        <i class="fa-solid fa-music"></i>
+                        <span class="music-wave">
+                            <span></span><span></span><span></span>
+                        </span>
+                    </button>
+                    <audio id="bg-audio" loop preload="none">
+                        <source src="assets/music/background-music.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-sun light-icon"></i>
+                    <i class="fa-solid fa-moon dark-icon"></i>
+                </button>
+
+                <!-- Mobile Menu Hamburger -->
+                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open Navigation Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <main id="main-content">
+
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-grid">
+                <div class="hero-text-content">
+                    <div class="hero-badges">
+                        <span class="badge badge-green"><i class="fa-solid fa-terminal"></i> IT Officer</span>
+                        <span class="badge badge-green"><i class="fa-solid fa-code"></i> Web Developer</span>
+                    </div>
+                    <h1 class="hero-headline">Building useful things.<br>Solving real problems.</h1>
+                    <p class="hero-subtitle">
+                        I work across IT operations and web development, bridging technical support, enterprise systems, and creative problem-solving.
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="#paths" class="btn btn-primary">EXPLORE PATHS ↗</a>
+                        <a href="#contact" class="btn btn-secondary">GET IN TOUCH</a>
+                    </div>
+                    <div class="hero-meta">
+                        <span><i class="fa-solid fa-location-dot"></i> Myanmar</span>
+                        <span><i class="fa-solid fa-shield-halved"></i> Active Duty</span>
+                    </div>
+                </div>
+
+                <div class="hero-visual-col">
+                    <div class="portrait-frame">
+                        <div class="portrait-glow"></div>
+                        <div class="portrait-img-wrapper">
+                            <img src="photo_2025-09-18_00-00-49.jpg" alt="Theodore - IT Officer & Web Developer" id="profile-img" onerror="this.style.display='none'; document.getElementById('portrait-fallback').style.display='flex';">
+                            <div id="portrait-fallback" class="portrait-fallback" style="display: none;">
+                                <i class="fa-solid fa-user-gear"></i>
+                                <span>Theodore</span>
+                                <small>IT Officer</small>
+                            </div>
+                        </div>
+                        <div class="floating-badge-card">
+                            <div class="fb-icon"><i class="fa-solid fa-bolt"></i></div>
+                            <div class="fb-text">
+                                <strong>Practical Tech</strong>
+                                <span>Human-Centered Solutions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TWO SEPARATE PROFESSIONAL PATHS -->
+        <section class="paths-section" id="paths">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">// PROFESSIONAL SPECIALIZATIONS</span>
+                    <h2 class="section-title">Two Professional Tracks</h2>
+                    <p class="section-desc">Select a track below to jump directly to dedicated competencies and experience.</p>
+                </div>
+
+                <div class="paths-grid">
+                    <!-- IT Officer Track Card -->
+                    <a href="#experience" class="path-card" onclick="focusTrack('it')">
+                        <div class="path-icon-box">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <div class="path-content">
+                            <span class="path-badge">Track 01</span>
+                            <h3>IT Officer</h3>
+                            <p>Focusing on daily IT operations, infrastructure, user support, ERP systems, Active Directory, and vendor coordination.</p>
+                            <ul class="path-list">
+                                <li><i class="fa-solid fa-check"></i> IT Operations &amp; User Support</li>
+                                <li><i class="fa-solid fa-check"></i> Windows Server &amp; Active Directory</li>
+                                <li><i class="fa-solid fa-check"></i> ERP &amp; Business Systems Support</li>
+                                <li><i class="fa-solid fa-check"></i> DMS Projects &amp; Vendor Management</li>
+                            </ul>
+                            <span class="path-cta">View Experience &amp; IT Skills ↗</span>
+                        </div>
+                    </a>
+
+                    <!-- Web Developer Track Card -->
+                    <a href="#projects" class="path-card" onclick="focusTrack('dev')">
+                        <div class="path-icon-box">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div class="path-content">
+                            <span class="path-badge">Track 02</span>
+                            <h3>Web Developer</h3>
+                            <p>Focusing on modern front-end and back-end web applications, responsive interfaces, JavaScript, Laravel, and personal projects.</p>
+                            <ul class="path-list">
+                                <li><i class="fa-solid fa-check"></i> HTML5, CSS3, JavaScript, Angular, React</li>
+                                <li><i class="fa-solid fa-check"></i> PHP, Laravel, MySQL, Git &amp; APIs</li>
+                                <li><i class="fa-solid fa-check"></i> Personal Projects &amp; Live Repositories</li>
+                                <li><i class="fa-solid fa-check"></i> Care Tech Company Background</li>
+                            </ul>
+                            <span class="path-cta">View Projects &amp; Web Stack ↗</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CODE VISUAL / CREATIVE DEVELOPER SECTION -->
+        <section class="code-visual-section">
+            <div class="container">
+                <div class="code-editor-panel">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                        </div>
+                        <div class="code-tabs">
+                            <button class="code-tab active" data-tab="html">index.html</button>
+                            <button class="code-tab" data-tab="css">styles.css</button>
+                            <button class="code-tab" data-tab="js">script.js</button>
+                        </div>
+                        <div class="code-lang">UTF-8</div>
+                    </div>
+                    <div class="code-body">
+                        <!-- HTML Tab -->
+                        <div class="code-pane active" id="pane-html">
+                            <pre><code><span class="tag">&lt;section</span> <span class="attr">class</span>=<span class="string">"theodore-philosophy"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Be strong enough to be gentle.<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;p&gt;</span>Building useful things for real people.<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"focus-badge"</span><span class="tag">&gt;</span>IT Systems &amp; Web Development<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/section&gt;</span></code></pre>
+                        </div>
+                        <!-- CSS Tab -->
+                        <div class="code-pane" id="pane-css">
+                            <pre><code><span class="selector">:root</span> {
+    <span class="property">--bg-light</span>: <span class="value">#F8FAFC</span>;
+    <span class="property">--forest-green</span>: <span class="value">#173A2E</span>;
+    <span class="property">--sage-accent</span>: <span class="value">#B6D6C4</span>;
+    <span class="property">--text-primary</span>: <span class="value">#101820</span>;
+}
+<span class="selector">.theodore</span> { <span class="property">display</span>: <span class="value">flex</span>; <span class="property">align-items</span>: <span class="value">center</span>; }</code></pre>
+                        </div>
+                        <!-- JS Tab -->
+                        <div class="code-pane" id="pane-js">
+                            <pre><code><span class="keyword">const</span> <span class="def">profile</span> = {
+    name: <span class="string">"Theodore (Saw Htet Aung)"</span>,
+    role: <span class="string">"IT Officer &amp; Web Developer"</span>,
+    motto: <span class="string">"Be strong enough to be gentle."</span>,
+    status: <span class="string">"Active &amp; Problem Solving"</span>
+};
+<span class="def">console</span>.<span class="property">log</span>(<span class="string">"Welcome to Theodore's digital space."</span>);</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION & PERSONAL PHILOSOPHY -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">// 01. ABOUT &amp; PHILOSOPHY</span>
+                    <h2 class="section-title">Connecting people, systems, and solutions.</h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-narrative">
+                        <p class="lead-text">
+                            I’m Theodore, an IT Officer and Web Developer with a background in building web applications and supporting business technology.
+                        </p>
+                        <p>
+                            My work connects people, systems, and practical solutions. I enjoy understanding problems, learning new technologies, and creating things that make everyday work easier.
+                        </p>
+                        
+                        <div class="quote-highlight-box">
+                            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                            <blockquote>
+                                “Be strong enough to be gentle.”
+                            </blockquote>
+                            <p class="quote-sub">Strength is not only about what you can do. It is also about how you treat people.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-stats-card">
+                        <div class="stat-item">
+                            <span class="stat-num">2025</span>
+                            <span class="stat-label">IT Officer Role Started</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">2021</span>
+                            <span class="stat-label">Web Dev Journey Began</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">100%</span>
+                            <span class="stat-label">Commitment to Practical Utility</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS & CAPABILITIES SECTION -->
+        <section class="skills-section" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">// 02. TECHNICAL COMPETENCIES</span>
+                    <h2 class="section-title">Skills &amp; Professional Capabilities</h2>
+                    <p class="section-desc">Distinguishing hands-on web technologies from core IT operations and enterprise systems support.</p>
+                </div>
+
+                <!-- Web Development Skills -->
+                <div class="skills-category-title">
+                    <h3><i class="fa-solid fa-code"></i> Web Development Stack</h3>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-brands fa-html5" style="color: #E34F26;"></i></div>
+                        <h4>HTML5</h4>
+                        <span class="skill-badge experienced">Experienced</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-brands fa-css3-alt" style="color: #1572B6;"></i></div>
+                        <h4>CSS3</h4>
+                        <span class="skill-badge experienced">Experienced</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-brands fa-js" style="color: #F7DF1E;"></i></div>
+                        <h4>JavaScript</h4>
+                        <span class="skill-badge experienced">Experienced</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-brands fa-angular" style="color: #DD0031;"></i></div>
+                        <h4>Angular</h4>
+                        <span class="skill-badge experienced">Experienced</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-brands fa-react" style="color: #61DAFB;"></i></div>
+                        <h4>React</h4>
+                        <span class="skill-badge refreshing">Refreshing / Active</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-brands fa-php" style="color: #777BB4;"></i></div>
+                        <h4>PHP</h4>
+                        <span class="skill-badge experienced">Experienced</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-brands fa-laravel" style="color: #FF2D20;"></i></div>
+                        <h4>Laravel</h4>
+                        <span class="skill-badge refreshing">Refreshing / Active</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-solid fa-database" style="color: #4479A1;"></i></div>
+                        <h4>MySQL</h4>
+                        <span class="skill-badge experienced">Experienced</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-brands fa-git-alt" style="color: #F05032;"></i></div>
+                        <h4>Git &amp; GitHub</h4>
+                        <span class="skill-badge experienced">Experienced</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-solid fa-network-wired" style="color: #173A2E;"></i></div>
+                        <h4>APIs</h4>
+                        <span class="skill-badge experienced">Experienced</span>
+                    </div>
+                </div>
+
+                <!-- IT Operations & Business Systems Capabilities -->
+                <div class="skills-category-title mt-large">
+                    <h3><i class="fa-solid fa-server"></i> IT Operations &amp; Enterprise Systems</h3>
+                </div>
+                <div class="capabilities-grid">
+                    <div class="capability-card">
+                        <div class="cap-icon"><i class="fa-solid fa-desktop"></i></div>
+                        <h4>IT Operations &amp; User Support</h4>
+                        <p>Daily troubleshooting, hardware/software maintenance, printer configuration, driver reinstallation, and workplace technology support.</p>
+                    </div>
+                    <div class="capability-card">
+                        <div class="cap-icon"><i class="fa-solid fa-building-shield"></i></div>
+                        <h4>Windows Server &amp; Active Directory</h4>
+                        <p>Administering enterprise directory environments, user access management, and infrastructure security protocols.</p>
+                    </div>
+                    <div class="capability-card">
+                        <div class="cap-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h4>Business Systems &amp; ERP Support</h4>
+                        <p>Supporting ERP-related systems, sales, spare parts, service, purchasing workflows, and Microsoft CRM business processes.</p>
+                    </div>
+                    <div class="capability-card">
+                        <div class="cap-icon"><i class="fa-solid fa-file-shield"></i></div>
+                        <h4>Document Management Systems (DMS)</h4>
+                        <p>Participating in DMS deployment projects, coordinating with internal teams, and ensuring seamless document workflows.</p>
+                    </div>
+                    <div class="capability-card">
+                        <div class="cap-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                        <h4>Vendor &amp; Technical Coordination</h4>
+                        <p>Collaborating with software vendors on application bugs, version compatibility, maintenance, and API integrations (SAP exposure).</p>
+                    </div>
+                    <div class="capability-card">
+                        <div class="cap-icon"><i class="fa-solid fa-wifi"></i></div>
+                        <h4>Infrastructure &amp; Networking</h4>
+                        <p>Familiarity with networking technologies including Aruba, HPE, GreenLake, Cisco, and Power over Ethernet (PoE) setups.</p>
+                    </div>
+                    <div class="capability-card">
+                        <div class="cap-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <h4>IT Training &amp; Consulting</h4>
+                        <p>Assisting users with system operations, organizing meeting rooms, and preparing professional technical presentations.</p>
+                    </div>
+                    <div class="capability-card">
+                        <div class="cap-icon"><i class="fa-solid fa-robot"></i></div>
+                        <h4>AI Agents &amp; Workflow Automation</h4>
+                        <p>Exploring practical AI agents and automation tools (such as n8n) to streamline repetitive workflows and boost productivity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section class="experience-section" id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">// 03. PROFESSIONAL JOURNEY</span>
+                    <h2 class="section-title">Experience Timeline</h2>
+                </div>
+
+                <div class="timeline">
+                    <!-- Current Role -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="role-title">IT Officer</h3>
+                                    <span class="company-name">Enterprise Infrastructure &amp; Business Systems</span>
+                                </div>
+                                <span class="timeline-badge current">October 2025 — Present</span>
+                            </div>
+                            <p class="timeline-desc">
+                                Managing daily IT operations, user support, Windows Server &amp; Active Directory environments, and enterprise business systems.
+                            </p>
+                            <ul class="timeline-bullets">
+                                <li>Daily IT support, hardware/software troubleshooting, and printer driver management.</li>
+                                <li>Supporting business applications for sales, spare parts, service, purchasing, and Microsoft CRM processes.</li>
+                                <li>Participating in Document Management System (DMS) projects and internal system coordination.</li>
+                                <li>Coordinating with software vendors on bug fixes, version updates, and API/SAP-related integrations.</li>
+                                <li>Networking and infrastructure exposure across Aruba, HPE, GreenLake, Cisco, and PoE environments.</li>
+                                <li>Providing user training, preparing technical presentations, meeting room setups, and occasional company photography.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Previous Role -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="role-title">Junior Front-End Developer</h3>
+                                    <span class="company-name">Care Tech Company</span>
+                                </div>
+                                <span class="timeline-badge">From 2021</span>
+                            </div>
+                            <p class="timeline-desc">
+                                Built and maintained front-end web applications, focusing on hospital management systems and user-friendly medical workflows.
+                            </p>
+                            <ul class="timeline-bullets">
+                                <li>Developed responsive user interfaces for hospital management software.</li>
+                                <li>Collaborated with backend teams to integrate forms, tables, and medical record modules.</li>
+                                <li>Refined front-end code using HTML, CSS, JavaScript, and responsive frameworks.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERSONAL PROJECTS SECTION -->
+        <section class="projects-section" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">// 04. FEATURED WORK</span>
+                    <h2 class="section-title">Personal Projects &amp; Applications</h2>
+                    <p class="section-desc">Practical applications built to solve real challenges. Expandable architecture designed for future projects.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-project="todo">
+                        <div class="project-card-top">
+                            <div class="project-icon-box bg-sage">
+                                <i class="fa-solid fa-list-check"></i>
+                            </div>
+                            <span class="project-status in-progress">In Progress</span>
+                        </div>
+                        <div class="project-card-body">
+                            <h3>To-Do List Application</h3>
+                            <p>A focused task management application for organizing daily work, managing tasks, and tracking completion with clean UI.</p>
+                            <div class="tech-stack-tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <button class="project-link-btn" onclick="openProjectModal('todo')">
+                                View Details <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card" data-project="tracker">
+                        <div class="project-card-top">
+                            <div class="project-icon-box bg-forest">
+                                <i class="fa-solid fa-ticket"></i>
+                            </div>
+                            <span class="project-status in-progress">In Progress</span>
+                        </div>
+                        <div class="project-card-body">
+                            <h3>IT Issue Tracking System</h3>
+                            <p>An internal IT issue tracking application designed to help an IT team report, assign, manage, and resolve technical issues efficiently.</p>
+                            <div class="tech-stack-tags">
+                                <span>Laravel</span>
+                                <span>Bootstrap</span>
+                                <span>MySQL</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <button class="project-link-btn" onclick="openProjectModal('tracker')">
+                                View Details <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card" data-project="ai">
+                        <div class="project-card-top">
+                            <div class="project-icon-box bg-accent">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <span class="project-status exploring">Exploring</span>
+                        </div>
+                        <div class="project-card-body">
+                            <h3>AI Agent &amp; Workflow Automation</h3>
+                            <p>Exploring practical AI agents and workflow automation tools (such as n8n) to simplify repetitive tasks and improve daily productivity.</p>
+                            <div class="tech-stack-tags">
+                                <span>AI Agents</span>
+                                <span>n8n</span>
+                                <span>Automation</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <button class="project-link-btn" onclick="openProjectModal('ai')">
+                                View Details <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-left">
+                        <div class="contact-portrait">
+                            <img src="photo_2026-10-27_19-14-37.jpg" alt="Theodore" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'">
+                        </div>
+                        <span class="badge badge-green">Available for Collaboration</span>
+                    </div>
+
+                    <div class="contact-right">
+                        <span class="section-tag">// 05. GET IN TOUCH</span>
+                        <h2 class="contact-title">Have an idea, a project, or a technical challenge?</h2>
+                        <p class="contact-subtitle">Let’s build something useful.</p>
+                        
+                        <div class="contact-actions">
+                            <a href="mailto:theodore.it@example.com" class="btn btn-primary btn-lg">
+                                LET’S TALK ↗
+                            </a>
+                            <div class="social-links-row">
+                                <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i> GitHub</a>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERSONAL WEBSITE BRIDGE CTA SECTION (AFTER CONTACT) -->
+        <section class="personal-bridge-section" id="personal-side">
+            <div class="container">
+                <div class="personal-bridge-card">
+                    <div class="bridge-icon">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <div class="bridge-content">
+                        <span class="section-tag">// THE PERSON BEHIND THE WORK</span>
+                        <h3>Curious about the person behind the work?</h3>
+                        <p>Discover my interests, personality, personal philosophy, favorite stories, and the things I enjoy beyond my professional work.</p>
+                    </div>
+                    <div class="bridge-action">
+                        <a href="#" id="personal-site-link" class="btn btn-primary personal-site-btn" target="_blank" rel="noopener noreferrer">
+                            Explore My Personal Side <i class="fa-solid fa-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <span class="footer-brand">Theodore</span>
+                <p>IT Officer &amp; Web Developer — “Be strong enough to be gentle.”</p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; <span id="current-year">2026</span> Theodore (Saw Htet Aung). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PROJECT MODAL -->
+    <div id="project-modal" class="modal-backdrop" aria-hidden="true">
+        <div class="modal-container" role="dialog" aria-modal="true">
+            <button class="modal-close" id="modal-close-btn" aria-label="Close Modal">&times;</button>
+            <div id="modal-content-body">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
